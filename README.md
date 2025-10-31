@@ -1,6 +1,8 @@
 # Text-to-Audiobook Tool
 
 This repository contains a small command-line utility that converts a text file into an audiobook with a neural, human-like voice.
+It also includes an optional graphical interface that makes it easy to pick a file, choose a voice, and generate an MP3 without
+typing any commands.
 
 The tool is designed to run on macOS (or any platform with Python 3.9+). It uses Microsoft's neural voices via the [`edge-tts`](https://github.com/rany2/edge-tts) library, which provides extremely natural-sounding narration.
 
@@ -18,6 +20,26 @@ The tool is designed to run on macOS (or any platform with Python 3.9+). It uses
    > Tip: `edge-tts` streams MP3 audio, so no additional audio tools are necessary.
 
 ## Usage
+
+### Graphical interface
+
+The easiest way to use the tool is through its built-in GUI:
+
+```bash
+python src/audiobook_tool.py --gui
+```
+
+If you omit the `--gui` flag, the GUI will also appear automatically when you run the script without arguments.
+
+The window lets you:
+
+* Browse for a text file on your Mac.
+* Pick from the available Microsoft neural voices (the list is downloaded automatically).
+* Adjust rate, pitch, and chunk size using drop-down menus with sensible defaults.
+* Name the MP3 file—the audiobook is saved in the same folder where you ran the script.
+* Watch progress updates while the audio is being generated.
+
+### Command line
 
 1. Save the text you want narrated to a UTF-8 encoded `.txt` file.
 2. Run the CLI:
